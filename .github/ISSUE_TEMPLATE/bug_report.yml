@@ -1,0 +1,88 @@
+name: Bug report
+description: Something is broken or not working as expected in Gridlocked
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. The game source code is maintained in private repositories; this public repo tracks issues only.
+        Please avoid posting passwords or passkeys.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What went wrong?
+      description: Short summary of the problem
+      placeholder: e.g. Game froze after the computer's turn
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What did you do before the problem happened?
+      placeholder: |
+        1. Signed in with email
+        2. Started a game vs computer
+        3. Made a move on row 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+    validations:
+      required: true
+
+  - type: dropdown
+    id: game-mode
+    attributes:
+      label: Game mode
+      options:
+        - Local (two players on same device)
+        - Vs computer
+        - Remote multiplayer
+        - Not in a game / other
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser & device
+      placeholder: e.g. Safari 18 on iPhone 15, Chrome 131 on Windows 11
+    validations:
+      required: true
+
+  - type: input
+    id: build
+    attributes:
+      label: Build number (optional)
+      description: Shown in the site footer when playing, e.g. "build 42"
+      placeholder: build 42
+
+  - type: checkboxes
+    id: signed-in
+    attributes:
+      label: Account
+      options:
+        - label: I was signed in when this happened
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots, screen recordings, or other context (paste links if needed)

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Gridlocked — play the game
+    url: https://github.com/andyofengland/GridGame-Web-issues/issues
+    about: Bug reports and feedback belong in this repository's Issues tab.
