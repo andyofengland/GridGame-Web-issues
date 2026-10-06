@@ -1,0 +1,36 @@
+name: Ensure issue labels
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ensure-labels.yml'
+
+permissions:
+  issues: write
+
+jobs:
+  labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create labels
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          create() {
+            local name="$1" color="$2" desc="$3"
+            gh label create "$name" --repo "$GITHUB_REPOSITORY" --color "$color" --description "$desc" 2>/dev/null \
+              || gh label edit "$name" --repo "$GITHUB_REPOSITORY" --color "$color" --description "$desc"
+          }
+          create "ready-for-dev" "0E8A16" "Maintainer triaged; Cursor may implement"
+          create "ready-for-frontend" "1D76DB" "Cross-repo: start frontend agent after backend PR"
+          create "area:frontend" "5319E7" "Work belongs in GridGame-Web-frontend"
+          create "area:backend" "B60205" "Work belongs in GridGame-Web-backend"
+          create "area:ios" "FBCA04" "Work belongs in GridGame-Web-iOS (human-gated)"
+          create "cross-repo" "D93F0B" "Needs coordinated changes in more than one code repo"
+          create "agent:blocked" "000000" "Cursor launcher or agent failed"
+          create "in-dev" "C5DEF5" "Agent or human is implementing"
+          create "in-review" "D4C5F9" "PR open against dev"
+          create "shipped" "0E8A16" "Fix released (usually via main)"

@@ -43,9 +43,9 @@ If you believe you have found a security vulnerability, do **not** open a public
 | **GridGame-Web-issues** (this repo) | Public issue tracking |
 | GridGame-Web-frontend (private) | React web client |
 | GridGame-Web-backend (private) | API and game logic |
-| Workspace / deploy repos (private) | CI/CD and infrastructure |
+| GridGame-Web-iOS (private) | iOS / visionOS client |
 
-Issues filed here are triaged and linked to work in the private repos. Closing an issue here usually means a fix has been released or the report was resolved another way.
+See [docs/DEV_PROMOTION.md](docs/DEV_PROMOTION.md) for maintainer agent labels, `dev` vs `main`, and staging.
 
 ## License
 

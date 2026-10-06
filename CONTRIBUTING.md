@@ -30,8 +30,9 @@ Use the **Feature request** template. Describe the problem you are trying to sol
 ## What happens after you file an issue
 
 1. A maintainer reviews and may ask follow-up questions.
-2. Valid bugs are linked to tasks in the **private** development repositories.
-3. When a fix is deployed, the issue is closed with a short note where possible.
+2. They add `area:*` labels and, when the work is ready, `ready-for-dev` (optional acceptance criteria).
+3. A Cursor agent may open a PR against `dev` in the private frontend/backend repos. iOS stays human-gated.
+4. When a fix is on production (`main`), the issue is closed (`shipped`) where possible.
 
 We cannot guarantee timelines. Critical bugs (data loss, security, unable to sign in) are prioritised.
 

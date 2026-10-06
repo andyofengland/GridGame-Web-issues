@@ -86,3 +86,28 @@ body:
     attributes:
       label: Anything else?
       description: Screenshots, screen recordings, or other context (paste links if needed)
+
+  - type: checkboxes
+    id: area
+    attributes:
+      label: Likely area (optional)
+      description: Maintainers will set `area:*` labels. Players can skip this.
+      options:
+        - label: Web frontend
+        - label: API / backend
+        - label: iOS / visionOS app
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria (optional)
+      description: Maintainers fill this in before tagging ready-for-dev. Not required for player reports.
+      placeholder: |
+        - Given ...
+        - When ...
+        - Then ...
+    validations:
+      required: false
+
