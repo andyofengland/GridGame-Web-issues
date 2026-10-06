@@ -20,7 +20,7 @@ human PR `dev` → `main`  →  production
 |---|---|---|
 | Git branch that deploys | `main` | `dev` |
 | `SHARED_RESOURCE_ID` | `gridgame-prod` | `gridgame-dev` |
-| GitHub Environment | none on the prod job (OIDC stays `ref:refs/heads/main`) | `staging` |
+| GitHub Environment | none on the prod job (OIDC stays `ref:refs/heads/main`) | `STAGING_*` repo vars/secrets (`ref:refs/heads/dev`) |
 | Frontend | `www.gridlocked.me` | `dev.gridlocked.me` |
 | API | current API hostname | `api-dev.gridlocked.me` |
 
@@ -54,5 +54,5 @@ Checklist: backend `dev` merged → frontend `dev` merged → staging smoke (hea
 ## Secrets
 
 - **`CURSOR_API_KEY`** on this issues repo (Cursor Dashboard → Integrations)
-- Staging GitHub Environment + OIDC trust: see `infra/aws/iam-github-oidc-trust.json` in the frontend and backend repos
+- Staging GitHub `STAGING_*` variables/secrets + OIDC trust: see `infra/aws/iam-github-oidc-trust.json` in the frontend and backend repos
 - Staging stays off until each web repo has **`STAGING_ENABLED=true`**
