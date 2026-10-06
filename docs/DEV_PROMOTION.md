@@ -54,5 +54,5 @@ Checklist: backend `dev` merged → frontend `dev` merged → staging smoke (hea
 ## Secrets
 
 - **`CURSOR_API_KEY`** on this issues repo (Cursor Dashboard → Integrations)
-- Staging GitHub `STAGING_*` variables/secrets + OIDC trust: see `infra/aws/iam-github-oidc-trust.json` in the frontend and backend repos
+- Staging GitHub `STAGING_*` hostname overrides are optional; deploys request ACM and reuse the prod Route 53 zone
 - Staging stays off until each web repo has **`STAGING_ENABLED=true`**
