@@ -1,6 +1,6 @@
 # Dev branch, staging, and Cursor agents
 
-Canonical copy of the workspace promotion contract. Agents work **one git repo at a time**.
+Public-tracker summary. The full contract, including local Compose, lives in sibling repo `GridGame-Web-Across` (`docs/DEV_PROMOTION.md`). Agents work **one git repo at a time**.
 
 ## Promotion path
 
@@ -35,7 +35,11 @@ Do **not** set staging `AUTH_COOKIE_DOMAIN` to `.gridlocked.me`. Use a **differe
 | `cross-repo` | Backend first, then `ready-for-frontend` |
 | `ready-for-frontend` | Start the frontend agent |
 | `agent:blocked` | Launcher or agent failed |
-| `in-dev` / `in-review` / `shipped` | Status |
+| `in-dev` | Agent launch succeeded (auto) |
+| `in-review` | Linked PR open in FE/BE (auto) |
+| `shipped` | Linked PR merged to `main` (auto; issue closed) |
+
+Label sync needs secret **`ISSUES_TOKEN`** on the **frontend and backend** repos (same token the API uses to file issues), with `issues:write` on this tracker. The PR title or body must include `andyofengland/GridGame-Web-issues#N`.
 
 In-game feedback does not set `area:*`. Add those labels yourself.
 

@@ -1,0 +1,27 @@
+---
+description: Public issues tracker and Cursor agent launch labels
+alwaysApply: true
+---
+
+# GridGame-Web-issues
+
+Public product tracker. Code lives in private FE / BE / iOS repos. Agents work **one git repo at a time**.
+
+## Launch labels
+
+- `ready-for-dev` or `ready-for-frontend` **must be newly applied** to re-run the launcher (remove + re-add).
+- Require `area:frontend` and/or `area:backend` (and optionally `area:ios`, human-gated).
+- `cross-repo`: backend first, then add `ready-for-frontend`.
+- Status (auto from FE/BE workflows when the PR cites `andyofengland/GridGame-Web-issues#N`):
+  - launch OK → `in-dev`
+  - PR open against `dev`/`main` → `in-review`
+  - PR merged to `dev` → status cleared + comment (staging path)
+  - PR merged to `main` → `shipped` + issue closed
+  - launch failure → `agent:blocked`
+
+## Do not
+
+- Depend on issue-form YAML for in-game feedback — launcher keys off labels only.
+- Put implementation code in this repo; open PRs in the private code repos against `dev`.
+
+Secret: `CURSOR_API_KEY` on this repo. See `docs/DEV_PROMOTION.md`.
