@@ -53,7 +53,7 @@ In-game feedback does not set `area:*`. Add those labels yourself.
 4. Merge both to `dev`, smoke staging
 5. Same-day `dev` → `main` on **both** web repos
 
-Checklist: backend `dev` merged → frontend `dev` merged → staging smoke (health, sign-in, one game) → `dev`→`main` both repos → prod smoke → close issue (`shipped`).
+Checklist: backend `dev` merged → frontend `dev` merged → staging smoke (health, sign-in, one game) → `dev`→`main` both repos → prod smoke (`shipped` + close is automatic when a linked PR merges to `main`).
 
 ## Secrets
 

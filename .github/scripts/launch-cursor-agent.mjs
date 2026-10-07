@@ -66,6 +66,7 @@ function buildPrompt(area, extra) {
     '',
     'Requirements:',
     '- Branch from `dev` and open the pull request against `dev`, never `main`.',
+    `- Put this exact reference in the PR title or body so labels sync: andyofengland/GridGame-Web-issues#${ISSUE_NUMBER}`,
     '- Follow AGENTS.md in the repo.',
     '- Run the repo test/lint/build commands and fix failures you cause.',
     '- Keep the diff minimal. Do not commit secrets.',
