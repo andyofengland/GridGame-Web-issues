@@ -28,6 +28,7 @@ jobs:
       - name: Launch cloud agent
         env:
           CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          CODE_REPOS_TOKEN: ${{ secrets.CODE_REPOS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
