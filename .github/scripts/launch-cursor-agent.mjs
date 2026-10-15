@@ -112,6 +112,8 @@ function buildPrompt(workItem) {
     'Requirements:',
     '- Branch from `dev` and open the pull request against `dev`, never `main`.',
     '- After required CI checks on the PR are green, **merge your own PR into `dev`** (agent merge). Do not open or merge a PR to `main`.',
+    '- The repo auto-deletes the feature branch on merge into `dev`. Never delete `dev` or `main`.',
+    '- If you close a PR as superseded or abandon it without merging, delete the remote feature branch.',
     `- Put this exact reference in the PR title or body: andyofengland/GridGame-Web-issues#${ISSUE_NUMBER}`,
     '- Follow AGENTS.md and docs/DEV_PROMOTION.md in the repo.',
     '- You may change apps/web, apps/api, and apps/ios as needed for this ticket.',
