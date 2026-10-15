@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   launch:
-    if: github.event.label.name == 'ready-for-dev' || github.event.label.name == 'ready-for-frontend'
+    if: github.event.label.name == 'ready-for-agent' || github.event.label.name == 'ready-for-human'
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
